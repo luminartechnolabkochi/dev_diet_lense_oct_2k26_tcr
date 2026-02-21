@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "diet_app",
     "rest_framework",
+    "rest_framework.authtoken",
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,6 @@ STATIC_URL = 'static/'
 
 
 AUTH_USER_MODEL="diet_app.User"
+
+AUTHENTICATION_BACKENDS=["django.contrib.auth.backends.ModelBackend",
+                         "diet_app.backends.EmailBackEnd"]

@@ -1,0 +1,22 @@
+#=================User==============
+
+# api call for creating user account
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username":"react",
+    "email":"react@gmail.com",
+    "password":"Password@123",
+    "phone":96789775
+}
+
+# Api call getting token
+###
+POST http://127.0.0.1:8000/token/
+Content-Type: application/json
+
+{
+    "username":"react",
+    "password":"Password@123"
+}
