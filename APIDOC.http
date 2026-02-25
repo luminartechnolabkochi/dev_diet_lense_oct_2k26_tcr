@@ -5,11 +5,17 @@ POST http://127.0.0.1:8000/register/
 Content-Type: application/json
 
 {
-    "username":"react",
-    "email":"react@gmail.com",
+    "username":"java",
+    "email":"java@gmail.com",
     "password":"Password@123",
-    "phone":96789775
+    "phone":96789777
 }
+
+#Api call for fetching user detail 
+###
+GET http://127.0.0.1:8000/user/3/
+Accept: application/json
+Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
 
 # Api call getting token
 ###
@@ -17,6 +23,96 @@ POST http://127.0.0.1:8000/token/
 Content-Type: application/json
 
 {
-    "username":"react",
+    "username":"java",
     "password":"Password@123"
 }
+
+#api call for creating user profile
+###
+POST http://127.0.0.1:8000/profile/
+Content-Type: application/json
+Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
+
+{
+    "height":165,
+    "weight":72,
+    "age":32,
+    "gender":"male"
+}
+
+
+#api call for user profile detail
+
+###
+GET http://127.0.0.1:8000/profile/1/
+Accept: application/json
+Authorization: Token d919e4cae90352617e1d3637a04015f989630250
+
+
+#api call for update usr profile
+###
+PUT http://127.0.0.1:8000/profile/1/
+Content-Type: application/json
+Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
+
+{
+  "height": 165.0,
+  "weight": 75.0,
+  "age": 34
+}
+
+#------------------------Food log api's--------------
+
+#Api call for adding food log
+###
+POST http://127.0.0.1:8000/foodlog/
+Content-Type: application/json
+Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
+
+{
+    "name":"idly",
+    "meal_type":"breakfast",
+    "calories":250,
+    "serving_size":"4 no"
+
+}
+
+#api call for listing foodlogs
+###
+GET http://127.0.0.1:8000/foodlog/
+Accept: application/json
+Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
+
+
+#Api call for fetching food log details
+###
+GET  http://127.0.0.1:8000/foodlog/1/
+Accept: application/json
+Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
+
+
+#api call for updating food log
+###
+PUT  http://127.0.0.1:8000/foodlog/1/
+Content-Type: application/json
+Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
+
+{
+  "id": 1,
+  "name": "tea",
+  "meal_type": "snack",
+  "calories": 75,
+  "serving_size": "100ml",
+  "notes": null,
+  "picture": null,
+  "created_at": "2026-02-25T06:19:08.077586Z",
+  "owner": 3
+}
+
+
+
+#Api call for daily summary
+###
+GET http://127.0.0.1:8000/summary/
+Accept: application/json
+Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
