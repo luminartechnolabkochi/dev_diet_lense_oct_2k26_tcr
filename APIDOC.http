@@ -70,10 +70,10 @@ Content-Type: application/json
 Authorization: Token aa9f161b6eb19842558d1467a0ba3deb88d629e2
 
 {
-    "name":"idly",
-    "meal_type":"breakfast",
-    "calories":250,
-    "serving_size":"4 no"
+    "name":"meals",
+    "meal_type":"lunch",
+    "calories":450,
+    "serving_size":"300gm"
 
 }
 

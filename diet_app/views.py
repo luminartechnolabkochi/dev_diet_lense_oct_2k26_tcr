@@ -116,12 +116,17 @@ class SummaryView(APIView):
 
         total_consumed=qs.values("calories").aggregate(total=Sum("calories"))
         # total_consumed={"total":325}
+        meal_type_summary = qs.values("meal_type").annotate(total=Sum("calories"))
+        
+        print(meal_type_summary)
+        
         context={
             "daily_target":request.user.profile.bmr,
 
             "total_consumed":total_consumed.get("total",0),
             
-            "balance":request.user.profile.bmr - total_consumed.get("total",0)
+            "balance":request.user.profile.bmr - total_consumed.get("total",0),
+            "meal_type_summary":meal_type_summary
         }
 
         return Response(data=context)
